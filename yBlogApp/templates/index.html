@@ -28,7 +28,8 @@ file:// -->
 src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script 
 src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]--> </head> <body>
+    <![endif]--> </head> 
+    <body>
     <!-- Navigation -->
     <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
         <div class="container-fluid">
@@ -54,13 +55,13 @@ id="bs-example-navbar-collapse-1">
                         <a href="index.html">Home</a>
                     </li>
                     <li>
-                        <a href="about.html">About</a>
+                        <a href="{{url_for('resume')}}">Me</a>
                     </li>
                     <li>
-                        <a href="post.html">Sample Post</a>
+                        <a href="{{url_for('posts')}}">Post</a>
                     </li>
                     <li>
-                        <a href="contact.html">Contact</a>
+                        <a href="{{url_for('contact')}}">Contact</a>
                     </li>
                 </ul>
             </div>
