@@ -16,7 +16,15 @@ app.config.from_object(__name__)
 
 @app.route("/")
 def home():
-    return render_template('home.html')
+    return render_template('index.html')
+
+@app.route("/resume/")
+def resume():
+    return render_template('resume.html')
+
+@app.route("/contact/")
+def contact():
+    return render_template('contact.html')    
 
 @app.route("/posts/")
 def posts():
