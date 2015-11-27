@@ -6,9 +6,9 @@
     <meta name="author" content="">
     <title>Yongkie Wiyogo</title>
     <!-- Bootstrap Core CSS -->
-    <link href="{{ url_for('static', filename = 'css/bootstrap.min.css')}}" rel="stylesheet">
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
-    <link href="{{ url_for('static', filename='css/clean-blog.min.css')}}" rel="stylesheet">
+    <link href="/static/css/clean-blog.min.css" rel="stylesheet">
     <!-- Custom Fonts -->
     <link 
 href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" 
@@ -52,10 +52,10 @@ toggling -->
 id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="index.html">Home</a>
+                        <a href="/">Home</a>
                     </li>
                     <li>
-                        <a href="{{url_for('resume')}}">Me</a>
+                        <a href="{{url_for('resume')}}">About Me</a>
                     </li>
                     <li>
                         <a href="{{url_for('posts')}}">Post</a>
@@ -73,7 +73,7 @@ id="bs-example-navbar-collapse-1">
     <!-- Set your background image for this header on the line below. 
 -->
     <header class="intro-header" style="background-image: 
-url('{{url_for('static', filename='img/home-bg.jpg')}}')">
+url('{{url_for('static', filename='img/home-bg2.jpg')}}')">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 
@@ -92,31 +92,21 @@ col-md-offset-1">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 
 col-md-offset-1">
+                {% for post in posts %}
                 <div class="post-preview">
-                    <a href="post.html">
+                    <a href="{{ url_for('post', name=post.path.replace('posts/', '')) }}" class="internal">
                         <h2 class="post-title">
-                            Man must explore, and this is exploration at 
-its greatest
+                            {{ post.title }} 
                         </h2>
                         <h3 class="post-subtitle">
-                            Problems look mighty small from 150 miles up
+                            {{ post.description }} 
                         </h3>
                     </a>
-                    <p class="post-meta">Posted by <a href="#">Start 
-Bootstrap</a> on September 24, 2014</p>
+                    <p class="post-meta">Posted by <a href="#">Yongkie</a> on {{ post.date }}</p>
                 </div>
                 <hr>
-                <div class="post-preview">
-                    <a href="post.html">
-                        <h2 class="post-title">
-                            I believe every human has a finite number of 
-heartbeats. I don't intend to waste any of mine.
-                        </h2>
-                    </a>
-                    <p class="post-meta">Posted by <a href="#">Start 
-Bootstrap</a> on September 18, 2014</p>
-                </div>
-                <hr>
+                {% endfor %}
+
                 <div class="post-preview">
                     <a href="post.html">
                         <h2 class="post-title">
@@ -200,8 +190,8 @@ Your Website 2014</p>
         </div>
     </footer>
     <!-- jQuery -->
-    <script src="js/jquery.js"></script>
+    <script src="/static/js/jquery.js"></script>
     <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
     <!-- Custom Theme JavaScript -->
-    <script src="js/clean-blog.min.js"></script> </body> </html>
+    <script src="/static/js/clean-blog.min.js"></script> </body> </html>
