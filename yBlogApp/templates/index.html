@@ -33,7 +33,7 @@
                         <div class="post-title" style="background-color: {{post.bgcolor}};">
                             <a href="{{ url_for('post', name=post.path.replace('posts/', '')) }}">
                                 <h2>{{ post.title }}</h2>
-                                <span>on {{post.date.strftime('%d-%m-%Y')}}</span>
+                                <span>on {{post.date.strftime('%d.%m.%Y')}}</span>
                             </a>
                         </div> 
                         <div class="post-details">                                            

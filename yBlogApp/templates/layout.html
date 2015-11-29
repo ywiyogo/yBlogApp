@@ -105,13 +105,29 @@
 
           <div class="container">
             {% block content %}
-
+            <section class="col s12 m12 l8 section" > 
+              <div class="row">
+                <div class="blog"> <!-- full Blog start -->
+                  <div class="col s12 m12 l12 blog-post">
+                    <div class="thumbnail z-depth-1 animated">                                        
+                      <div class="blog-details">
+                        <div class="post-title" style="background-color: {{post.bgcolor}};">
+                          <a href="">
+                            <h2>Page Not Found!</h2>
+                          </a>
+                        </div> 
+                      </div>              
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
             {% endblock %}
 
             <div class="row">
               <div class="footer">
                 <div class="col s12 l5">
-                  <p><i class="fa fa-creative-commons"></i> 2015 Yongkie Wiyogo </p>
+                  <p>© 2015 Yongkie Wiyogo </p>
                 </div> 
                 <div class="col s12 l7">
                   <p>Powered by Flask and designed by deviserweb</p>

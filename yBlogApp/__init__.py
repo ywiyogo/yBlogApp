@@ -22,6 +22,7 @@ flatpages = FlatPages(app)
 freezer = Freezer(app)
 app.config.from_object(__name__)
 
+posts=[]
 
 @app.route("/")
 def home():
@@ -67,14 +68,17 @@ def post(name):
     post = flatpages.get_or_404(path)
     return render_template('post.html', post=post)
 
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template('404.html'), 404
 
-@app.route("/fragmentor")
-def fragmentor():
-    return render_template('fragmentor.html')
+#@app.route("/fragmentor")
+#def fragmentor():
+  #  return render_template('fragmentor.html')
 
 
 if __name__ == "__main__":
     if len(sys.argv) > 1 and sys.argv[1] == "build":
         freezer.freeze()
     else:
-        app.run(host='0.0.0.0', port=8000, debug=True)
+        app.run(host='0.0.0.0', port=80, debug=True)

@@ -374,7 +374,7 @@ body .container {
 }
 .custom-content-wrapper {
   padding-right: 30px;
-  margin-bottom: 25px;
+  margin-bottom: 10px;
   border-bottom: 1px solid #bdbdbd;
 }
 .custom-content-wrapper:last-child {
