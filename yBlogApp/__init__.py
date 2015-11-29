@@ -6,7 +6,7 @@ from flask_frozen import Freezer
 DEBUG = True
 FLATPAGES_AUTO_RELOAD = DEBUG
 FLATPAGES_EXTENSION = '.md'
-FLATPAGES_ROOT = 'content'
+FLATPAGES_ROOT = 'blog'
 POST_DIR = 'posts'
 
 COLORS = ['#707281', # grey
@@ -27,16 +27,21 @@ app.config.from_object(__name__)
 def home():
     posts = [p for p in flatpages if p.path.startswith(POST_DIR)]
     posts.sort(key=lambda item: item['date'], reverse=False)
-
+    all_tags=[]
     # adding background color to post metadata
-    ind = 0
-    for post in posts:
+    for ind, post in enumerate(posts):
+        ind = ind%len(COLORS)
+        # print post['bgcolor'], but assignment uses post.meta['bgcolor']
         post.meta['bgcolor'] = COLORS[ind]
-        ind = ind + 1
-        if ind == len(COLORS):
-            ind = 0
 
-    return render_template('index.html', posts=posts)
+        # assigning first 70 chars to description
+        post.meta['description'] = post.body[:200]
+        # added tags to all tags
+        for tag in post['tags']:
+            all_tags.append(tag)
+
+    print all_tags
+    return render_template('index.html', posts=posts, all_tags=all_tags)
 
 
 @app.route("/resume/")

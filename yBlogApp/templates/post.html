@@ -2,12 +2,23 @@
 {% block title %}{{post.title}}{% endblock %}
 {% block meta_desc %}{{post.description}}{% endblock %}
 {% block page_title %}{{post.title}} {% endblock %}
-{% block page_subtitle %}{{post.date}} {% endblock %}
+{% block page_subtitle %}{{post.date.strftime('%d-%m-%Y')}} {% endblock %}
 {% block page_img %}{{post.img}} {% endblock %}
 {% block page_desc %}{{post.description}} {% endblock %}
 
-{% block header %}
-
+{% block add_sidebar %}
+<div class="col s12  sidebar-item info">
+    <div class="row">                               
+        <div class="col s3"> 
+            <h3>Topics</h3>
+        </div>                                
+        <div class="col s9 wow fadeIn icon a1" data-wow-delay="0.1s" > <!-- text -->
+            {% for tag in post.tags %}
+            <div class="chip">{{tag}}</div>                  
+            {% endfor %}  
+        </div>
+    </div>         
+</div>        
 {% endblock %}
 
 {% block content %}
@@ -17,14 +28,14 @@
             <div class="col s12 m12 l12 blog-post">
                 <div class="thumbnail z-depth-1 animated">                                        
                     <div class="blog-details">
-                        <div class="post-title" id="blog-post-1">
+                        <div class="post-title" style="background-color: {{post.bgcolor}};">
                             <a href="">
-                                <h3>{{post.title}}</h3>
-                                <span>on {{post.date}}</span>
+                                <h2>{{post.title}}</h2>
+                                <span>on {{post.date.strftime('%d-%m-%Y')}}</span>
                             </a>
                         </div> 
                         <div class="post-details">
-                            <p>{{ post.html|safe }}
+                            <p class="flow-text">{{ post.html|safe }}
                             </p>
                         </div> 
                     </div>              

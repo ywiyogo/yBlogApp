@@ -51,11 +51,37 @@ main {
   display: inline-block;
   font-size: inherit;
 }
-.post-details a {
+.post-details a{
   color: #2A6496;
-  font-size: 10pt;
-  font-weight: 300;
 }
+.post-details ul, .post-details li{
+  list-style-type: disc;
+  margin-left: 10px;
+}
+
+.chip {
+  display: inline-block;
+  height: 32px;
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.6);
+  line-height: 32px;
+  padding: 0 5px;
+  border-radius: 16px;
+  background-color: #e4e4e4; }
+  .chip img {
+    float: left;
+    margin: 0 8px 0 -12px;
+    height: 32px;
+    width: 32px;
+    border-radius: 50%; }
+  .chip i.material-icons {
+    cursor: pointer;
+    float: right;
+    font-size: 16px;
+    line-height: 32px;
+    padding-left: 8px; }
+
 /* Component imported */
 
 /*
@@ -150,7 +176,7 @@ h5 {
 p {
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
-  font-size: 10pt;
+  font-size: 12pt;
   line-height: 17pt;
 }
 a {
@@ -166,13 +192,13 @@ a {
 
 body {
   background-color: #eae8e7;
-  color: #767270;
+  color: #333;
   text-align: center;
 }
 body .container {
   margin-top: 24px;
-  /*width: 970px;
-  max-width: none !important; */
+  width: 90%;
+  /*max-width: none !important; */
 }
 /*
 |----------------------------------------------------------------------------
@@ -418,7 +444,6 @@ body .container {
 }
 .post-title h2 {
   margin: 0px;
-  font-size: 14pt;
   line-height: 24pt;
 }
 .post-title span {

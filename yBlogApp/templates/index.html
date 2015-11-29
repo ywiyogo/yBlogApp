@@ -3,7 +3,22 @@
 {% block meta_desc %}My personal site{% endblock %}
 {% block page_title %}Yongkie Wiyogo{% endblock %}
 {% block page_subtitle %} Welcome to my personal site {% endblock %}
-{% block page_img %}/static/img/home-bg2.jpg {% endblock %}
+{% block page_img %}/static/img/herbst1.jpg {% endblock %}
+
+{% block add_sidebar %}
+<div class="col s12  sidebar-item info">
+    <div class="row">                               
+        <div class="col s3"> 
+            <h3>Topics</h3>
+        </div>                                
+        <div class="col s9 wow fadeIn icon a1" data-wow-delay="0.1s" > <!-- text -->
+        {% for tag in all_tags %}
+            <div class="chip">{{tag}}</div>                  
+        {% endfor %}  
+        </div>
+    </div>         
+</div>
+{% endblock %}
 
 {% block content %}
 <!-- == Blog ==-->
@@ -18,7 +33,7 @@
                         <div class="post-title" style="background-color: {{post.bgcolor}};">
                             <a href="{{ url_for('post', name=post.path.replace('posts/', '')) }}">
                                 <h2>{{ post.title }}</h2>
-                                <span>on {{ post.date }}</span>
+                                <span>on {{post.date.strftime('%d-%m-%Y')}}</span>
                             </a>
                         </div> 
                         <div class="post-details">                                            
@@ -32,4 +47,4 @@
             </div>
             {% endfor %}            
         </div>
-{% endblock %}
+        {% endblock %}

@@ -34,7 +34,7 @@
   <link href="/static/css/responsive.css" rel="stylesheet">
 
   <!-- COLORS -->  
-  <link rel="stylesheet" href="/static/css/colors/orange.css" title="orange">  <!-- Currently Using this color -->
+  <link rel="stylesheet" href="/static/css/colors/lime.css" title="lime">  <!-- Currently Using this color -->
   <!-- <link rel="alternate stylesheet" href="/static/css/colors/red.css" title="red"> -->
   <!-- <link rel="alternate stylesheet" href="/static/css/colors/purple.css" title="purple"> -->
   <!-- <link rel="alternate stylesheet" href="/static/css/colors/orange.css" title="orange"> -->
@@ -66,7 +66,7 @@
               <div class="heading">                            
                 <!-- ==== IMAGE  ====-->
                 <div class="feature-img">
-                  <a href="index.html"><img src="{% block page_img %}/static/img/yprofile2.jpg {%endblock%}" class="responsive-img" alt=""></a> 
+                  <a href="/"><img src="{% block page_img %}/static/img/herbst2015.jpg {%endblock%}" class="responsive-img" alt=""></a> 
                 </div>                            
                 <!-- ===== NAVIGATION   ====-->
                 <div class=" nav-icon">
@@ -90,7 +90,7 @@
                 </div>                            
                 <!-- ==== NAME AND TAGLINE ====-->
                 <div class="title col s12 m12 l11 right  wow fadeIn" data-wow-delay="0.1s">   
-                  <h2>{% block page_title %} Yongkie Wiyogo{% endblock %}</h2> <!-- title name -->
+                  <a href="/"><h2>{% block page_title %} Yongkie Wiyogo{% endblock %}</h2></a> <!-- title name -->
                   <h5>{% block page_subtitle %} {% endblock %}</h5>  <!-- tagline -->
                 </div>                         
               </div>
@@ -103,20 +103,21 @@
             </div>   <!-- end row -->
           </aside><!-- end sidebar -->
 
-          {% block content %}
+          <div class="container">
+            {% block content %}
 
-          {% endblock %}
-          <div class="row">
-          <div class="footer z-depth-1">                           
-              <div class="section-icon col s4">
-                <p><i class="fa fa-creative-commons"></i> 2015 Yongkie Wiyogo </p>
+            {% endblock %}
+
+            <div class="row">
+              <div class="footer">
+                <div class="col s12 l5">
+                  <p><i class="fa fa-creative-commons"></i> 2015 Yongkie Wiyogo </p>
+                </div> 
+                <div class="col s12 l7">
+                  <p>Powered by Flask and designed by deviserweb</p>
+                </div>                           
+
               </div>
-              <div class="section-icon col s4">
-                <p>Designed by deviserweb</p>
-              </div>  
-              <div class="section-icon col s4">
-                <p>Powered by Flask</p>
-              </div>        
             </div>
           </div>
         </div>
