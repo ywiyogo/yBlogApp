@@ -8,7 +8,7 @@ After learning about the web application technology at Udacity for about 4 month
 This website is built using python framework [Flask](http://flask.pocoo.org/docs/0.10/). The supporting web server is Nginx.  [James Harding's work](http://www.jamesharding.ca) has inspired me to create this markdown-based blog website.
 
 For the first time, I could launch it with Raspberry Pi 2 at home. The front-end is based on material design and inspired from [deviserweb](http:http://deviserweb.com/).
-The exciting thing is that I do not install any database system for it. I write this article using a normal text editor with markdown syntax.
+The exciting thing is that I do not install any database system for it. I write this article using a normal text editor with the [markdown](http://daringfireball.net/projects/markdown/) syntax.
 
 Next coming features are:
 
