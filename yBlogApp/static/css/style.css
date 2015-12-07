@@ -399,7 +399,7 @@ body .container {
 .custom-content-wrapper span {
   color: #5da4d9;
   margin-top: 0px;
-  font-size: 10pt;
+  /*font-size: 10pt;*/
   line-height: 15pt;
 }
 .custom-content-wrapper p {
