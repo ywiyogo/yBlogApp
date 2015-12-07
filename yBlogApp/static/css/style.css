@@ -183,6 +183,10 @@ p {
   font-size: 12pt;
   line-height: 17pt;
 }
+.sidebar p {
+  margin: 0px;
+  font-size: 11pt;
+}
 a {
   color: #ffffff;
 }
